@@ -1,5 +1,5 @@
 op = {"+", "-", "/", "*"}
-P = [5, 6, 2, "+", "*", 12, 4, "/", "-"]
+P = ["5", "6", "2", "+", "*", "12", "4", "/", "-"]
 P.append(")")
 Pila = []
 C = 0
@@ -7,7 +7,7 @@ C = 0
 for i in P:
       if i !=")":
             if i not in op:
-                  Pila.append(i)
+                  Pila.append(int(i))
             else:
                   B = Pila.pop()
                   A = Pila.pop()
@@ -17,8 +17,10 @@ for i in P:
                         C = A-B
                   elif i == "*":
                         C = A*B
-                  else:
+                  elif i == "/":
                         C = A/B
+                  elif i == "^":
+                        C = A**B
 
                   Pila.append(C)
       else:
