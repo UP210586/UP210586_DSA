@@ -57,12 +57,9 @@ def randomlist(a):
             a.append(r)
     return(a)
    
-print(randomlist(lista))
-primero=0
-ultimo=len(lista)-1
 
 print(lista)
-Quicksort(lista,primero,ultimo)
+Quicksort(randomlist(lista),0,len(lista)-1)
 print(lista)
 elemento=(input("Ingresa el valor a buscar: "))
 x,y=BinarySearch(lista,elemento)

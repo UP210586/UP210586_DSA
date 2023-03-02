@@ -26,7 +26,7 @@ for i in Q:
         j=S[-1] 
         a = prioridad(i)
         b = prioridad(j)
-        if b>=a:
+        if b>=a: #type:ignore
             P.append(j)
             S.pop()
         S.append(i)    
