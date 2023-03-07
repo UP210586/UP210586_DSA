@@ -72,7 +72,7 @@ def Calculadora(P):
                 if i == "sen":
                     C = math.sin(R)
                 elif i == "cos":
-                    C = math.cos(R)
+                    C = math.cos(R) ##no copies
                 elif i == "tan":
                     C = math.tan(R)
                 elif i == "arctan":
@@ -90,12 +90,27 @@ def Calculadora(P):
                     C = math.log10(A)
                 elif i == "ln":
                     C = math.log(A)
+                elif i == "aln":
+                    C = math.e**(A)
+                elif i == "alog":
+                    C = 10**(A)
                 Pila.append(C)
                     
 
     return float(C)
+array=[]
+array = input("Ingresa la operación: ")
+num=" "
+for c in array:
+    if c.isdigit()or c == ".":
+        num +=c
+    elif num != " ":
+        array.append(float(num)) #type:ignore
+        num = " "
+    array.append(c)#type:ignore
+if num != " ":
+    array.append(float(num))#type:ignore 
+print(array)
 
-array = input("Ingresa la operación (separa por espacios cada término): ")
-c = array.split()
-print("El término en posfix es: ", posfix(c))
-print("El resultado es: ", Calculadora((posfix(c))))
+print("El término en posfix es: ", posfix(array))
+print("El resultado es: ", Calculadora((posfix(array))))
