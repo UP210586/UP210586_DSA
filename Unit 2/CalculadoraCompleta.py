@@ -98,19 +98,8 @@ def Calculadora(P):
                     
 
     return float(C)
-array=[]
-array = input("Ingresa la operación: ")
-num=" "
-for c in array:
-    if c.isdigit()or c == ".":
-        num +=c
-    elif num != " ":
-        array.append(float(num)) #type:ignore
-        num = " "
-    array.append(c)#type:ignore
-if num != " ":
-    array.append(float(num))#type:ignore 
-print(array)
 
-print("El término en posfix es: ", posfix(array))
-print("El resultado es: ", Calculadora((posfix(array))))
+array = input("Ingresa la operación (separa por espacios cada término): ")
+c = array.split()
+print("El término en posfix es: ", posfix(c))
+print("El resultado es: ", Calculadora((posfix(c))))
