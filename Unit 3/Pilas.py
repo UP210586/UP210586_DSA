@@ -25,21 +25,22 @@ class Stack:
         self.size += 1
 
     def pop(self):
-        if Stack().isEmpty == False:
-            dato = self.head.data #type:ignore
-            self.head = self.head.next #type:ignore
+        dato = None
+        if not self.isEmpty():
+            dato = self.head.data  # type:ignore
+            self.head = self.head.next  # type:ignore
             self.size -= 1
-            return dato 
+        return dato
 
     def peek(self):
         return self.head.data  # type:ignore
-
-
+    def show(self):
+        mostrar = 
+        return mostrar
 q1 = Stack()
 q1.push("Jesús")
 q1.push("María")
 q1.push("José")
 print(q1.pop())
-print(q1.pop())
-print(q1.pop())
-print(q1.pop())
+print(q1.peek())
+print(q1.show())
