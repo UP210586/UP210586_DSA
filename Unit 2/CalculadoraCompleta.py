@@ -12,8 +12,7 @@ def prioridad(c):
     elif c in ["(", ")"]:
         return int(0)
 def posfix(Q):
-    op = {"+", "-", "/", "*", "^", "sen", "cos", "tan",
-          "arctan", "arccos", "arcsen", "log", "ln", "alog", "aln","√"}
+    op = {"+", "-", "/", "*", "^", "sen", "cos", "tan","arctan", "arccos", "arcsen", "log", "ln", "alog", "aln","√"}
     S = []
     P = []
     Q.insert(0, "(")
@@ -68,19 +67,21 @@ def Calculadora(P):
                 Pila.append(C)
             elif i in fnt:
                 A = Pila.pop()
-                R=math.radians(A)
                 if i == "sen":
+                    R=math.radians(A)
                     C = math.sin(R)
                 elif i == "cos":
+                    R=math.radians(A)
                     C = math.cos(R) ##no copies
                 elif i == "tan":
+                    R=math.radians(A)
                     C = math.tan(R)
                 elif i == "arctan":
-                    C = math.atan(R)
+                    C = math.degrees(math.atan(A))
                 elif i == "arccos":
-                    C = math.acos(R)
+                    C = math.degrees(math.acos(A))
                 elif i == "arcsen":
-                    C = math.asin(R)
+                    C = math.degrees(math.asin(A))
                 Pila.append(C)
             elif i in fnl:
                 A= Pila.pop()
@@ -98,6 +99,7 @@ def Calculadora(P):
                     
 
     return float(C)
+
 
 array = input("Ingresa la operación (separa por espacios cada término): ")
 c = array.split()
